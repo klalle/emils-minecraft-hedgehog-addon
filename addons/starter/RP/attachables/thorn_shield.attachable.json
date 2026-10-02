@@ -33,7 +33,13 @@
           "variable.off_hand_first_person_pos_z = 5.1;",
           "variable.off_hand_first_person_rot_x = 1.0;",
           "variable.off_hand_first_person_rot_y = 176.0;",
-          "variable.off_hand_first_person_rot_z = -2.5;"
+          "variable.off_hand_first_person_rot_z = -2.5;",
+          "variable.block_off_hand_pos_x = -4.5;",
+          "variable.block_off_hand_pos_y = 1.5;",
+          "variable.block_off_hand_pos_z = 8.0;",
+          "variable.block_off_hand_rot_x = 1.0;",
+          "variable.block_off_hand_rot_y = 176.0;",
+          "variable.block_off_hand_rot_z = 5.0;"
         ],
         "pre_animation": [
           "variable.is_blocking_main_hand = query.is_sneaking && !query.is_item_name_any('slot.weapon.offhand', 'starter:thorn_shield') && query.is_item_name_any('slot.weapon.mainhand', 'starter:thorn_shield');",

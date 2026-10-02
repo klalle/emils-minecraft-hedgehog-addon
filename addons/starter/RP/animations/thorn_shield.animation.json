@@ -36,10 +36,10 @@
       "bones": {
         "shield": {
           "position": {
-            "0": ["variable.off_hand_first_person_pos_x + 0.5", "variable.off_hand_first_person_pos_y", "variable.off_hand_first_person_pos_z"],
-            "0.1": ["variable.off_hand_first_person_pos_x + 0.5", "variable.off_hand_first_person_pos_y + 3.2", "variable.off_hand_first_person_pos_z + 1.5"]
+            "0": ["variable.off_hand_first_person_pos_x", "variable.off_hand_first_person_pos_y", "variable.off_hand_first_person_pos_z"],
+            "0.15": ["variable.block_off_hand_pos_x", "variable.block_off_hand_pos_y", "variable.block_off_hand_pos_z"]
           },
-          "rotation": ["variable.off_hand_first_person_rot_x", "variable.off_hand_first_person_rot_y", "variable.off_hand_first_person_rot_z + 10.0"]
+          "rotation": ["variable.block_off_hand_rot_x", "variable.block_off_hand_rot_y", "variable.block_off_hand_rot_z"]
         }
       }
     },
