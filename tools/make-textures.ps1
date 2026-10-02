@@ -99,7 +99,16 @@ Save $b "$rp\items\hedgehog_ball.png"
 $b = New-Object System.Drawing.Bitmap 16, 16
 Fill $b 0 0 16 16 110 80 50 10
 Fill $b 0 8 8 12 225 205 160 6
-Save $b "$rp\entity\hedgehog_ball.png"Write-Host 'Texturer genererade.'
+Save $b "$rp\entity\hedgehog_ball.png"
+
+# Slangbälla, modelltextur 64x16 (UV enligt slingshot.geo.json): trä + rött band
+$b = New-Object System.Drawing.Bitmap 64, 16
+Fill $b 0 0 22 16 125 88 50 10
+Fill $b 24 0 44 3 170 40 40 10
+Save $b "$rp\attachables\slingshot.png"
+Write-Host 'Texturer genererade.'
+
+
 
 
 
