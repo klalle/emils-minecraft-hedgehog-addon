@@ -1,17 +1,18 @@
-{
+﻿{
   "format_version": 2,
   "header": {
     "name": "Starter RP",
     "description": "Resource pack för starter-addonet",
     "uuid": "85ccefa6-a4f6-47f1-bd34-86af5e892fdc",
-    "version": [1, 1, 0],
+    "version": [1, 2, 0],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "10db5f67-51a9-4d2b-b766-62914809787a",
-      "version": [1, 1, 0]
+      "version": [1, 2, 0]
     }
   ]
 }
+

@@ -28,12 +28,31 @@ for ($i = 2; $i -lt 14; $i++) { $b.SetPixel($i, 15 - $i, (C 200 175 125)); $b.Se
 $b.SetPixel(14, 1, (C 245 230 190))
 Save $b "$rp\items\hedgehog_spine.png"
 
-# Taggsköld 16x16
+# Taggsköld, ikon 16x16: vanlig sköldform med järnkant, trä och taggar
 $b = New-Object System.Drawing.Bitmap 16, 16
-Fill $b 3 2 13 14 130 90 50 10
-for ($x = 3; $x -lt 13; $x++) { $b.SetPixel($x, 2, (C 70 70 75)); $b.SetPixel($x, 13, (C 70 70 75)) }
-for ($y = 2; $y -lt 14; $y++) { $b.SetPixel(3, $y, (C 70 70 75)); $b.SetPixel(12, $y, (C 70 70 75)) }
-foreach ($p in @(@(1, 1), @(14, 1), @(1, 14), @(14, 14), @(8, 0), @(8, 15), @(0, 8), @(15, 8))) { $b.SetPixel($p[0], $p[1], (C 215 195 150)) }
-for ($i = 5; $i -lt 11; $i++) { $b.SetPixel($i, 7, (C 190 190 195)); $b.SetPixel(7, $i, (C 190 190 195)) }   # kors
+$iron = C 85 85 92; $bone = C 235 220 180
+for ($y = 1; $y -le 14; $y++) {
+  $inset = if ($y -ge 11) { $y - 10 } else { 0 }            # smalnar av nedtill
+  for ($x = 3 + $inset; $x -le 12 - $inset; $x++) {
+    $edge = ($x -eq 3 + $inset -or $x -eq 12 - $inset -or $y -eq 1 -or $y -eq 14)
+    $b.SetPixel($x, $y, $(if ($edge) { $iron } else { C (140 + $rnd.Next(-9, 9)) (95 + $rnd.Next(-9, 9)) 55 }))
+  }
+}
+for ($y = 2; $y -le 12; $y++) { $b.SetPixel(7, $y, $iron); $b.SetPixel(8, $y, $iron) }   # mittribba
+foreach ($p in @(@(3, 0), @(12, 0), @(1, 5), @(14, 5), @(7, 15), @(8, 15), @(5, 13), @(10, 13), @(1, 2), @(14, 2))) { $b.SetPixel($p[0], $p[1], $bone) }
+$b.SetPixel(7, 7, $bone); $b.SetPixel(8, 7, $bone); $b.SetPixel(7, 8, $bone); $b.SetPixel(8, 8, $bone)   # taggbulle
 Save $b "$rp\items\thorn_shield.png"
+
+# Taggsköld, modelltextur 64x64 (UV enligt thorn_shield.geo.json)
+$b = New-Object System.Drawing.Bitmap 64, 64
+$wood = { C (140 + $rnd.Next(-9, 9)) (95 + $rnd.Next(-9, 9)) 55 }
+for ($x = 0; $x -lt 26; $x++) { for ($y = 0; $y -lt 23; $y++) { $b.SetPixel($x, $y, (& $wood)) } }    # skivan
+foreach ($ox in 1, 14) {                                                                              # fram- och baksida: järnkant + mittribba
+  for ($x = $ox; $x -lt $ox + 12; $x++) { $b.SetPixel($x, 1, $iron); $b.SetPixel($x, 22, $iron) }
+  for ($y = 1; $y -lt 23; $y++) { $b.SetPixel($ox, $y, $iron); $b.SetPixel($ox + 11, $y, $iron) }
+  for ($y = 2; $y -lt 22; $y++) { $b.SetPixel($ox + 5, $y, $iron); $b.SetPixel($ox + 6, $y, $iron) }
+}
+for ($x = 26; $x -lt 42; $x++) { for ($y = 0; $y -lt 12; $y++) { $b.SetPixel($x, $y, (C (95 + $rnd.Next(-6, 6)) 95 100)) } }   # handtag
+for ($x = 0; $x -lt 18; $x++) { for ($y = 30; $y -lt 35; $y++) { $b.SetPixel($x, $y, $bone) } }      # taggar (ben)
+Save $b "$rp\attachables\thorn_shield.png"
 Write-Host 'Texturer genererade.'
