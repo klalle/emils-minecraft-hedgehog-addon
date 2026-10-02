@@ -6,14 +6,9 @@
       "states": {
         "default": {
           "animations": [
-            { "first_person_main": "c.item_slot == 'main_hand'" },
-            { "first_person_off": "c.item_slot != 'main_hand'" }
-          ],
-          "transitions": [{ "third_person": "!c.is_first_person" }]
-        },
-        "third_person": {
-          "animations": ["third_person"],
-          "transitions": [{ "default": "c.is_first_person" }]
+            { "first_person": "c.is_first_person" },
+            { "third_person": "!c.is_first_person" }
+          ]
         }
       }
     }

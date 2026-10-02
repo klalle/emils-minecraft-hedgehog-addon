@@ -1,31 +1,21 @@
 {
   "format_version": "1.10.0",
   "animations": {
-    "animation.starter.slingshot.first_person_main": {
+    "animation.starter.slingshot.first_person": {
       "loop": true,
       "bones": {
-        "slingshot": {
-          "position": ["variable.fp_main_pos_x", "variable.fp_main_pos_y", "variable.fp_main_pos_z"],
-          "rotation": ["variable.fp_main_rot_x", "variable.fp_main_rot_y", "variable.fp_main_rot_z"]
-        }
-      }
-    },
-    "animation.starter.slingshot.first_person_off": {
-      "loop": true,
-      "bones": {
-        "slingshot": {
-          "position": ["variable.fp_off_pos_x", "variable.fp_off_pos_y", "variable.fp_off_pos_z"],
-          "rotation": ["variable.fp_off_rot_x", "variable.fp_off_rot_y", "variable.fp_off_rot_z"]
+        "pole": {
+          "position": [-7.0, -3.0, -2.0],
+          "rotation": [152.0, -9.0, 25.0]
         }
       }
     },
     "animation.starter.slingshot.third_person": {
       "loop": true,
       "bones": {
-        "slingshot": {
-          "position": ["c.item_slot == 'main_hand' ? variable.tp_pos_x : -variable.tp_pos_x - 1.2", "variable.tp_pos_y", "variable.tp_pos_z"],
-          "rotation": ["variable.tp_rot_x", "variable.tp_rot_y", "variable.tp_rot_z"],
-          "scale": ["c.item_slot == 'main_hand' ? 1.0 : -1.0", -1.0, "c.item_slot == 'main_hand' ? -1.0 : 1.0"]
+        "pole": {
+          "position": [1.5, -2.5, -10.5],
+          "rotation": [97.0, -1.5, -49.0]
         }
       }
     }
