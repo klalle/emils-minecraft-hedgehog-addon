@@ -1,4 +1,4 @@
-{
+﻿{
   "format_version": "1.21.0",
   "minecraft:entity": {
     "description": {
@@ -10,7 +10,7 @@
     "components": {
       "minecraft:type_family": { "family": ["hedgehog", "mob"] },
       "minecraft:collision_box": { "width": 0.5, "height": 0.4 },
-      "minecraft:health": { "value": 8, "max": 8 },
+      "minecraft:health": { "value": 4, "max": 4 },
       "minecraft:movement": { "value": 0.18 },
       "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
@@ -39,3 +39,4 @@
     }
   }
 }
+

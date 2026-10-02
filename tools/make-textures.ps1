@@ -1,4 +1,4 @@
-# Genererar enkla platshållartexturer (igelkott, tagg, taggsköld). Byt gärna ut PNG-filerna mot egen pixelkonst.
+﻿# Genererar enkla platshållartexturer (igelkott, tagg, taggsköld). Byt gärna ut PNG-filerna mot egen pixelkonst.
 Add-Type -AssemblyName System.Drawing
 $rp = Join-Path $PSScriptRoot '..\addons\starter\RP\textures'
 $rnd = New-Object System.Random 7
@@ -16,6 +16,7 @@ Fill $b 0 0 64 32 120 90 60 12            # kropp
 Fill $b 0 15 34 27 70 50 35 14            # taggar (mörka)
 for ($i = 0; $i -lt 70; $i++) { $b.SetPixel($rnd.Next(0, 34), $rnd.Next(15, 27), (C 215 195 150)) }  # ljusa taggspetsar
 Fill $b 34 0 52 8 205 175 135 8           # huvud
+Fill $b 0 27 8 31 225 205 160 6            # synliga taggar (ljusa)
 Fill $b 34 8 42 12 60 40 30 3             # nos
 $b.SetPixel(39, 5, (C 10 10 10)); $b.SetPixel(41, 5, (C 10 10 10))   # ögon (huvudets framsida)
 $b.SetPixel(40, 7, (C 20 15 15))
@@ -56,3 +57,4 @@ for ($x = 26; $x -lt 42; $x++) { for ($y = 0; $y -lt 12; $y++) { $b.SetPixel($x,
 for ($x = 0; $x -lt 18; $x++) { for ($y = 30; $y -lt 35; $y++) { $b.SetPixel($x, $y, $bone) } }      # taggar (ben)
 Save $b "$rp\attachables\thorn_shield.png"
 Write-Host 'Texturer genererade.'
+
