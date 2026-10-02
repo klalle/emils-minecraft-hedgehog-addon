@@ -6,3 +6,4 @@ docker/data/
 Thumbs.db
 desktop.ini
 .DS_Store
+server/
