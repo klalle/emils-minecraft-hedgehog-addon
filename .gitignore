@@ -1,0 +1,8 @@
+dist/
+*.mcaddon
+*.mcpack
+.env
+docker/data/
+Thumbs.db
+desktop.ini
+.DS_Store
