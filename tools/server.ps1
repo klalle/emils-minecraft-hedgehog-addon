@@ -49,6 +49,16 @@ switch ($Command) {
       }
       Write-Host "Kopierade $a"
     }
+    # Dev-only pack (alltid dag m.m.), delas aldrig: ligger i dev/, inte addons/
+    $devSrc = "$root\dev\dev-tools\BP"
+    if (Test-Path $devSrc) {
+      $dst = Join-Path $srv 'behavior_packs\dev-tools_BP'
+      Remove-Item $dst -Recurse -Force -ErrorAction SilentlyContinue
+      Copy-Item $devSrc $dst -Recurse
+      $m = Get-Content "$dst\manifest.json" -Raw | ConvertFrom-Json
+      $bp += @{ pack_id = $m.header.uuid; version = $m.header.version }
+      Write-Host 'Kopierade dev-tools'
+    }
     ConvertTo-Json -InputObject $bp -Depth 5 | Set-Content "$world\world_behavior_packs.json"
     ConvertTo-Json -InputObject $rp -Depth 5 | Set-Content "$world\world_resource_packs.json"
     Write-Host "Aktiverade packs i världen '$level'. Starta om servern."

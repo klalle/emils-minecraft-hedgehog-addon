@@ -1,0 +1,22 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Dev Tools (endast labbserver)",
+    "description": "Alltid dag och klart väder under utveckling. Ska INTE delas.",
+    "uuid": "c53866ed-9379-456f-9e02-d08793db0dbb",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "460e4c0a-0ee1-4b46-adfc-a3181ede8801",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    { "module_name": "@minecraft/server", "version": "2.4.0" }
+  ]
+}
