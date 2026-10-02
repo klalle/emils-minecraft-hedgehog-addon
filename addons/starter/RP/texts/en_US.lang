@@ -7,3 +7,6 @@ entity.starter:hedgehog.name=Hedgehog
 item.spawn_egg.entity.starter:hedgehog.name=Hedgehog Spawn Egg
 item.starter:hedgehog_spine.name=Hedgehog Spine
 item.starter:thorn_shield.name=Thorn Shield
+item.starter:slingshot.name=Slingshot
+item.starter:hedgehog_ball.name=Hedgehog Ball
+entity.starter:hedgehog_ball.name=Hedgehog Ball

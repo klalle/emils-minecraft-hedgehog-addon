@@ -4,6 +4,8 @@
   "texture_data": {
     "starter_hedgehog_spine": { "textures": "textures/items/hedgehog_spine" },
     "starter_thorn_shield": { "textures": "textures/items/thorn_shield" },
-    "starter_camo_trap": { "textures": "textures/items/camo_trap" }
+    "starter_camo_trap": { "textures": "textures/items/camo_trap" },
+    "starter_slingshot": { "textures": "textures/items/slingshot" },
+    "starter_hedgehog_ball": { "textures": "textures/items/hedgehog_ball" }
   }
 }

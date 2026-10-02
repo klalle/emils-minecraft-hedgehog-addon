@@ -79,7 +79,28 @@ for ($x = 1; $x -lt 15; $x++) { for ($y = 5; $y -lt 14; $y++) { $d = $rnd.Next(-
 for ($i = 0; $i -lt 70; $i++) { $d = $rnd.Next(-25, 25); $b.SetPixel($rnd.Next(1, 15), $rnd.Next(6, 14), (C (50 + $d) (130 + $d) (40 + $d))) }
 foreach ($p in @(@(4, 5), @(8, 4), @(12, 5), @(6, 3), @(10, 3))) { $b.SetPixel($p[0], $p[1], (C 60 150 50)) }
 foreach ($p in @(@(4, 2), @(8, 1), @(12, 2))) { $b.SetPixel($p[0], $p[1], (C 215 220 225)); $b.SetPixel($p[0], $p[1] + 1, (C 150 155 165)) }
-Save $b "$rp\items\camo_trap.png"Write-Host 'Texturer genererade.'
+Save $b "$rp\items\camo_trap.png"# Slangbälla, ikon 16x16: trä-Y med gummiband
+$b = New-Object System.Drawing.Bitmap 16, 16
+$wood = C 130 90 50; $wood2 = C 100 68 38; $band = C 160 40 40
+foreach ($y in 8..14) { $b.SetPixel(7, $y, $wood); $b.SetPixel(8, $y, $wood2) }
+foreach ($i in 0..5) { $b.SetPixel(6 - $i, 7 - $i, $wood); $b.SetPixel(7 - $i, 7 - $i, $wood2); $b.SetPixel(9 + $i, 7 - $i, $wood); $b.SetPixel(10 + $i, 7 - $i, $wood2) }
+foreach ($x in 2..13) { $b.SetPixel($x, 2 + [int]([math]::Abs($x - 7.5) -lt 2.5 -and 0), $band) }
+foreach ($x in 5..10) { $b.SetPixel($x, 3, $band) }
+Save $b "$rp\items\slingshot.png"
+
+# Igelkottsboll, ikon 16x16: brun boll med ljusa taggar
+$b = New-Object System.Drawing.Bitmap 16, 16
+for ($x = 0; $x -lt 16; $x++) { for ($y = 0; $y -lt 16; $y++) {
+  if ((($x - 7.5) * ($x - 7.5) + ($y - 7.5) * ($y - 7.5)) -le 20) { $d = $rnd.Next(-12, 12); $b.SetPixel($x, $y, (C (110 + $d) (80 + $d) (50 + $d))) } } }
+foreach ($a in 0..11) { $t = $a * [math]::PI / 6; foreach ($r in 5, 6) { $px = [int](7.5 + $r * [math]::Cos($t)); $py = [int](7.5 + $r * [math]::Sin($t)); $b.SetPixel([math]::Max(0, [math]::Min(15, $px)), [math]::Max(0, [math]::Min(15, $py)), (C 225 205 160)) } }
+Save $b "$rp\items\hedgehog_ball.png"
+
+# Igelkottsboll, modelltextur 16x16
+$b = New-Object System.Drawing.Bitmap 16, 16
+Fill $b 0 0 16 16 110 80 50 10
+Fill $b 0 8 8 12 225 205 160 6
+Save $b "$rp\entity\hedgehog_ball.png"Write-Host 'Texturer genererade.'
+
 
 
 
