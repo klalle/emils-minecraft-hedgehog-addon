@@ -1,1 +1,5 @@
 tile.starter:ruby_block.name=Rubinblock
+entity.starter:hedgehog.name=Igelkott
+item.spawn_egg.entity.starter:hedgehog.name=Skapa Igelkott
+item.starter:hedgehog_spine.name=Igelkottstagg
+item.starter:thorn_shield.name=Taggsköld

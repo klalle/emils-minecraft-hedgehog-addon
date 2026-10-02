@@ -1,0 +1,17 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "starter:hedgehog",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/hedgehog" },
+      "geometry": { "default": "geometry.starter.hedgehog" },
+      "animations": { "walk": "animation.starter.hedgehog.walk" },
+      "scripts": {
+        "animate": [{ "walk": "query.modified_move_speed" }]
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": { "base_color": "#5b4636", "overlay_color": "#d9c7a3" }
+    }
+  }
+}

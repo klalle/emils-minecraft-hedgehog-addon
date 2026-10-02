@@ -1,0 +1,8 @@
+{
+  "resource_pack_name": "starter",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "starter_hedgehog_spine": { "textures": "textures/items/hedgehog_spine" },
+    "starter_thorn_shield": { "textures": "textures/items/thorn_shield" }
+  }
+}

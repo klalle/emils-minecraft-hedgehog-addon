@@ -27,6 +27,7 @@ switch ($Command) {
     Set-Prop 'allow-cheats' 'true'
     Set-Prop 'online-mode' 'true'
     Set-Prop 'allow-list' 'false'
+    Set-Prop 'content-log-console-output-enabled' 'true'
     Set-Prop 'default-player-permission-level' 'operator'
     Set-Prop 'texturepack-required' 'true'
     Write-Host 'server.properties uppdaterad.'
@@ -57,4 +58,5 @@ switch ($Command) {
     try { & .\bedrock_server.exe } finally { Pop-Location }
   }
 }
+
 

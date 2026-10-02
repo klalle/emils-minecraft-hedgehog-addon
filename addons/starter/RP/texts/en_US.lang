@@ -1,1 +1,5 @@
 tile.starter:ruby_block.name=Ruby Block
+entity.starter:hedgehog.name=Hedgehog
+item.spawn_egg.entity.starter:hedgehog.name=Hedgehog Spawn Egg
+item.starter:hedgehog_spine.name=Hedgehog Spine
+item.starter:thorn_shield.name=Thorn Shield
