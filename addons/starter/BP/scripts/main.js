@@ -1,4 +1,24 @@
-import { world, EntityDamageCause, EquipmentSlot } from "@minecraft/server";
+import { world, system, EntityDamageCause, EquipmentSlot } from "@minecraft/server";
+
+// Taggfälla: alla levande varelser som står på blocket tar skada (utom igelkottar).
+const TRAP = "starter:spike_trap";
+const TRAP_DAMAGE = 3;
+const TRAP_INTERVAL_TICKS = 10;
+
+system.runInterval(() => {
+  const seen = new Set();
+  for (const player of world.getAllPlayers()) {
+    for (const entity of player.dimension.getEntities({ location: player.location, maxDistance: 24 })) {
+      if (seen.has(entity.id)) continue;
+      seen.add(entity.id);
+      if (!entity.isValid || !entity.isOnGround || entity.typeId === "starter:hedgehog") continue;
+      if (!entity.getComponent("minecraft:health")) continue;
+      const { x, y, z } = entity.location;
+      const block = entity.dimension.getBlock({ x: Math.floor(x), y: Math.floor(y), z: Math.floor(z) });
+      if (block?.typeId === TRAP) entity.applyDamage(TRAP_DAMAGE, { cause: EntityDamageCause.contact });
+    }
+  }
+}, TRAP_INTERVAL_TICKS);
 
 const SHIELD = "starter:thorn_shield";
 const THORNS_DAMAGE = 3;

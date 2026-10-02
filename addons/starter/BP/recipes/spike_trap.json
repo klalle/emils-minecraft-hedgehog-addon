@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "starter:spike_trap" },
+    "tags": ["crafting_table"],
+    "pattern": ["SSS", "SDS", "SSS"],
+    "key": {
+      "S": { "item": "starter:hedgehog_spine" },
+      "D": { "item": "minecraft:pointed_dripstone" }
+    },
+    "unlock": [{ "item": "starter:hedgehog_spine" }],
+    "result": { "item": "starter:spike_trap" }
+  }
+}

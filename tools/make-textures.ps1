@@ -56,5 +56,13 @@ foreach ($ox in 1, 14) {                                                        
 for ($x = 26; $x -lt 42; $x++) { for ($y = 0; $y -lt 12; $y++) { $b.SetPixel($x, $y, (C (95 + $rnd.Next(-6, 6)) 95 100)) } }   # handtag
 for ($x = 0; $x -lt 18; $x++) { for ($y = 30; $y -lt 35; $y++) { $b.SetPixel($x, $y, $bone) } }      # taggar (ben)
 Save $b "$rp\attachables\thorn_shield.png"
-Write-Host 'Texturer genererade.'
+
+# Taggfälla 16x16: stålplatta med nitar (taggarna använder pixeln (2,2) som färg)
+$b = New-Object System.Drawing.Bitmap 16, 16
+for ($x = 0; $x -lt 16; $x++) { for ($y = 0; $y -lt 16; $y++) {
+  $edge = ($x -eq 0 -or $y -eq 0 -or $x -eq 15 -or $y -eq 15)
+  $b.SetPixel($x, $y, $(if ($edge) { C 60 60 66 } else { $d = $rnd.Next(-8, 8); C (130 + $d) (134 + $d) (142 + $d) })) } }
+foreach ($p in @(@(2, 2), @(13, 2), @(2, 13), @(13, 13))) { $b.SetPixel($p[0], $p[1], (C 205 210 218)) }
+Save $b "$rp\blocks\spike_trap.png"Write-Host 'Texturer genererade.'
+
 

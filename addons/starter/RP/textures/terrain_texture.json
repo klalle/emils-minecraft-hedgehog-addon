@@ -6,6 +6,9 @@
   "texture_data": {
     "starter_ruby_block": {
       "textures": "textures/blocks/ruby_block"
+    },
+    "starter_spike_trap": {
+      "textures": "textures/blocks/spike_trap"
     }
   }
 }

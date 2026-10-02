@@ -1,4 +1,5 @@
 tile.starter:ruby_block.name=Rubinblock
+tile.starter:spike_trap.name=Taggfälla
 entity.starter:hedgehog.name=Igelkott
 item.spawn_egg.entity.starter:hedgehog.name=Skapa Igelkott
 item.starter:hedgehog_spine.name=Igelkottstagg
