@@ -63,6 +63,8 @@ for ($x = 0; $x -lt 16; $x++) { for ($y = 0; $y -lt 16; $y++) {
   $edge = ($x -eq 0 -or $y -eq 0 -or $x -eq 15 -or $y -eq 15)
   $b.SetPixel($x, $y, $(if ($edge) { C 60 60 66 } else { $d = $rnd.Next(-8, 8); C (130 + $d) (134 + $d) (142 + $d) })) } }
 foreach ($p in @(@(2, 2), @(13, 2), @(2, 13), @(13, 13))) { $b.SetPixel($p[0], $p[1], (C 205 210 218)) }
-Save $b "$rp\blocks\spike_trap.png"Write-Host 'Texturer genererade.'
+Save $b "$rp\blocks\spike_trap.png"
+Write-Host 'Texturer genererade.'
+
 
 
