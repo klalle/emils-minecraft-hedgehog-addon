@@ -6,6 +6,7 @@
       "states": {
         "default": {
           "animations": [
+            "hide_block",
             { "wield_main_hand_first_person": "c.item_slot == 'main_hand'" },
             { "wield_off_hand_first_person": "c.item_slot != 'main_hand'" }
           ],
@@ -16,6 +17,7 @@
         },
         "blocking": {
           "animations": [
+            "hide_block",
             { "wield_main_hand_first_person": "!variable.is_blocking_main_hand && c.item_slot == 'main_hand'" },
             { "wield_main_hand_first_person_block": "variable.is_blocking_main_hand && c.item_slot == 'main_hand'" },
             { "wield_off_hand_first_person_block": "variable.is_blocking_off_hand && c.item_slot == 'off_hand'" }
@@ -26,7 +28,11 @@
           ]
         },
         "third_person": {
-          "animations": ["wield_third_person"],
+          "animations": [
+            { "wield_third_person": "!variable.is_blocking_main_hand && !variable.is_blocking_off_hand" },
+            { "hide_hand": "variable.is_blocking_main_hand || variable.is_blocking_off_hand" },
+            { "hide_block": "!variable.is_blocking_main_hand && !variable.is_blocking_off_hand" }
+          ],
           "transitions": [{ "default": "c.is_first_person" }]
         }
       }
