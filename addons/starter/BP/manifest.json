@@ -4,27 +4,27 @@
     "name": "Starter BP",
     "description": "Behavior pack för starter-addonet",
     "uuid": "8c00a35f-e377-475d-82e4-bc1a65112dc8",
-    "version": [1, 15, 0],
+    "version": [1, 16, 0],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "a339ea83-e3b8-453e-b7ac-15d16f278029",
-      "version": [1, 15, 0]
+      "version": [1, 16, 0]
     },
     {
       "type": "script",
       "language": "javascript",
       "uuid": "dbb70117-caea-4938-9e05-6005fbb07557",
-      "version": [1, 15, 0],
+      "version": [1, 16, 0],
       "entry": "scripts/main.js"
     }
   ],
   "dependencies": [
     {
       "uuid": "85ccefa6-a4f6-47f1-bd34-86af5e892fdc",
-      "version": [1, 15, 0]
+      "version": [1, 16, 0]
     },
     {
       "module_name": "@minecraft/server",
@@ -32,6 +32,7 @@
     }
   ]
 }
+
 
 
 
