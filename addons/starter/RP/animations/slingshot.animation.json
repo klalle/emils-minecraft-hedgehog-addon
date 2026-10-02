@@ -1,11 +1,11 @@
-﻿{
+{
   "format_version": "1.10.0",
   "animations": {
     "animation.starter.slingshot.first_person": {
       "loop": true,
       "bones": {
         "pole": {
-          "position": [-7.0, -3.0, -2.0],
+          "position": ["-7.0 + variable.tune_px", "-3.0 + variable.tune_py", "-2.0 + variable.tune_pz"],
           "rotation": [152.0, -9.0, 25.0]
         }
       }
@@ -14,12 +14,18 @@
       "loop": true,
       "bones": {
         "pole": {
-          "position": [1.5, -2.5, -10.5],
+          "position": ["1.5 + variable.tune_px", "-2.5 + variable.tune_py", "-10.5 + variable.tune_pz"],
           "rotation": [97.0, -1.5, -49.0]
+        }
+      }
+    },
+    "animation.starter.slingshot.tune": {
+      "loop": true,
+      "bones": {
+        "tilt": {
+          "rotation": ["variable.tune_rx", "variable.tune_ry", "variable.tune_rz"]
         }
       }
     }
   }
 }
-
-

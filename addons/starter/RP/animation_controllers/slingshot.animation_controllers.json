@@ -6,6 +6,7 @@
       "states": {
         "default": {
           "animations": [
+            "tune",
             { "first_person": "c.is_first_person" },
             { "third_person": "!c.is_first_person" }
           ]
