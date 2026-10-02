@@ -30,21 +30,21 @@ Rubinblockets egenskaper stÃ¥r i `addons/starter/BP/blocks/ruby_block.json`. Pro
 Texturen `addons/starter/RP/textures/blocks/ruby_block.png` kan ritas om i valfritt pixelprogram.
 Namn pÃ¥ svenska/engelska stÃ¥r i `RP/texts/*.lang`.
 
-## Innehåll i starter-addonet
+## InnehÃ¥ll i starter-addonet
 
-| Sak | ID | Hur du får den |
+| Sak | ID | Hur du fÃ¥r den |
 |---|---|---|
 | Rubinblock | `starter:ruby_block` | `/give @s starter:ruby_block` |
-| Igelkott (neutralt djur, slår tillbaka) | `starter:hedgehog` | `/summon starter:hedgehog` eller spawn egg i kreativmenyn |
+| Igelkott (neutralt djur, slÃ¥r tillbaka) | `starter:hedgehog` | `/summon starter:hedgehog` eller spawn egg i kreativmenyn |
 | Igelkottstagg (droppas av igelkott) | `starter:hedgehog_spine` | `/give @s starter:hedgehog_spine` |
-| Taggsköld | `starter:thorn_shield` | craft: tagg/planks/järn, eller `/give` |
+| TaggskÃ¶ld | `starter:thorn_shield` | craft: tagg/planks/jÃ¤rn, eller `/give` |
 
-Taggskölden ska hållas i vänsterhanden. Den skadar den som slår dig (3 hjärtan-halvor, 6 om du sneakar och då får du även tillbaka lite liv). Logiken finns i `addons/starter/BP/scripts/main.js`.
+TaggskÃ¶lden ska hÃ¥llas i vÃ¤nsterhanden. Den skadar den som slÃ¥r dig (3 hjÃ¤rtan-halvor, 6 om du sneakar och dÃ¥ fÃ¥r du Ã¤ven tillbaka lite liv). Logiken finns i `addons/starter/BP/scripts/main.js`.
 
 ## Lokal testserver
 
 ```powershell
-.\tools\server.ps1 setup    # en gång
-.\tools\server.ps1 deploy   # efter varje ändring
-.\tools\server.ps1 start    # starta (anslut på 127.0.0.1:19132)
+.\tools\server.ps1 setup    # en gÃ¥ng
+.\tools\server.ps1 deploy   # efter varje Ã¤ndring
+.\tools\server.ps1 start    # starta (anslut pÃ¥ 127.0.0.1:19132)
 ```
