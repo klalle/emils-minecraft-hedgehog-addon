@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "starter:poison_trap" },
+    "tags": ["crafting_table"],
+    "pattern": ["EEE", "ETE", "EEE"],
+    "key": {
+      "E": { "item": "minecraft:spider_eye" },
+      "T": { "item": "starter:spike_trap" }
+    },
+    "unlock": [{ "item": "starter:spike_trap" }],
+    "result": { "item": "starter:poison_trap" }
+  }
+}

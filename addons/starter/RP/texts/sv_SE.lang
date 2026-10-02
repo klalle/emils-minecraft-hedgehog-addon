@@ -1,5 +1,8 @@
 tile.starter:ruby_block.name=Rubinblock
 tile.starter:spike_trap.name=Taggfälla
+tile.starter:poison_trap.name=Förgiftad taggfälla
+tile.starter:camo_trap_block.name=Kamouflerad taggfälla
+item.starter:camo_trap.name=Kamouflerad taggfälla
 entity.starter:hedgehog.name=Igelkott
 item.spawn_egg.entity.starter:hedgehog.name=Skapa Igelkott
 item.starter:hedgehog_spine.name=Igelkottstagg

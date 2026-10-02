@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "starter:camo_trap_block",
+      "menu_category": { "category": "none" }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.starter.invisible",
+      "minecraft:material_instances": {
+        "*": { "texture": "starter_spike_trap", "render_method": "alpha_test" }
+      },
+      "minecraft:collision_box": { "origin": [-8, 0, -8], "size": [16, 1, 16] },
+      "minecraft:selection_box": { "origin": [-8, 0, -8], "size": [16, 2, 16] },
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 1.5 },
+      "minecraft:destructible_by_explosion": { "explosion_resistance": 10 },
+      "minecraft:light_dampening": 0,
+      "minecraft:loot": "loot_tables/blocks/camo_trap.json"
+    }
+  }
+}

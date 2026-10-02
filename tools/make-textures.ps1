@@ -64,7 +64,23 @@ for ($x = 0; $x -lt 16; $x++) { for ($y = 0; $y -lt 16; $y++) {
   $b.SetPixel($x, $y, $(if ($edge) { C 60 60 66 } else { $d = $rnd.Next(-8, 8); C (130 + $d) (134 + $d) (142 + $d) })) } }
 foreach ($p in @(@(2, 2), @(13, 2), @(2, 13), @(13, 13))) { $b.SetPixel($p[0], $p[1], (C 205 210 218)) }
 Save $b "$rp\blocks\spike_trap.png"
-Write-Host 'Texturer genererade.'
+# Förgiftad taggfälla: som taggfällan men pixel (3,3) är giftgrön (används av tagg-spetsar och giftpölar)
+$b = New-Object System.Drawing.Bitmap 16, 16
+for ($x = 0; $x -lt 16; $x++) { for ($y = 0; $y -lt 16; $y++) {
+  $edge = ($x -eq 0 -or $y -eq 0 -or $x -eq 15 -or $y -eq 15)
+  $b.SetPixel($x, $y, $(if ($edge) { C 60 60 66 } else { $d = $rnd.Next(-8, 8); C (130 + $d) (134 + $d) (142 + $d) })) } }
+foreach ($p in @(@(2, 2), @(13, 2), @(2, 13), @(13, 13))) { $b.SetPixel($p[0], $p[1], (C 205 210 218)) }
+$b.SetPixel(3, 3, (C 70 220 50))
+Save $b "$rp\blocks\poison_trap.png"
+
+# Kamouflerad taggfälla, ikon 16x16: stålplatta täckt av löv
+$b = New-Object System.Drawing.Bitmap 16, 16
+for ($x = 1; $x -lt 15; $x++) { for ($y = 5; $y -lt 14; $y++) { $d = $rnd.Next(-8, 8); $b.SetPixel($x, $y, (C (130 + $d) (134 + $d) (142 + $d))) } }
+for ($i = 0; $i -lt 70; $i++) { $d = $rnd.Next(-25, 25); $b.SetPixel($rnd.Next(1, 15), $rnd.Next(6, 14), (C (50 + $d) (130 + $d) (40 + $d))) }
+foreach ($p in @(@(4, 5), @(8, 4), @(12, 5), @(6, 3), @(10, 3))) { $b.SetPixel($p[0], $p[1], (C 60 150 50)) }
+foreach ($p in @(@(4, 2), @(8, 1), @(12, 2))) { $b.SetPixel($p[0], $p[1], (C 215 220 225)); $b.SetPixel($p[0], $p[1] + 1, (C 150 155 165)) }
+Save $b "$rp\items\camo_trap.png"Write-Host 'Texturer genererade.'
+
 
 
 

@@ -1,5 +1,8 @@
 tile.starter:ruby_block.name=Ruby Block
 tile.starter:spike_trap.name=Spike Trap
+tile.starter:poison_trap.name=Poison Spike Trap
+tile.starter:camo_trap_block.name=Camouflaged Spike Trap
+item.starter:camo_trap.name=Camouflaged Spike Trap
 entity.starter:hedgehog.name=Hedgehog
 item.spawn_egg.entity.starter:hedgehog.name=Hedgehog Spawn Egg
 item.starter:hedgehog_spine.name=Hedgehog Spine

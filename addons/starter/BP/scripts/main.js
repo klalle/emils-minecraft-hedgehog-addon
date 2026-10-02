@@ -1,8 +1,11 @@
 import { world, system, EntityDamageCause, EquipmentSlot } from "@minecraft/server";
 
-// Taggfälla: alla levande varelser som står på blocket tar skada (utom igelkottar).
-const TRAP = "starter:spike_trap";
-const TRAP_DAMAGE = 3;
+// Fällor: alla levande varelser som står på blocket tar skada (utom igelkottar).
+const TRAPS = {
+  "starter:spike_trap": { damage: 3 },
+  "starter:poison_trap": { damage: 3, poisonSeconds: 8 },
+  "starter:camo_trap_block": { damage: 3 }, // osynlig taggfälla
+};
 const TRAP_INTERVAL_TICKS = 10;
 
 system.runInterval(() => {
@@ -15,7 +18,10 @@ system.runInterval(() => {
       if (!entity.getComponent("minecraft:health")) continue;
       const { x, y, z } = entity.location;
       const block = entity.dimension.getBlock({ x: Math.floor(x), y: Math.floor(y), z: Math.floor(z) });
-      if (block?.typeId === TRAP) entity.applyDamage(TRAP_DAMAGE, { cause: EntityDamageCause.contact });
+      const trap = block && TRAPS[block.typeId];
+      if (!trap) continue;
+      entity.applyDamage(trap.damage, { cause: EntityDamageCause.contact });
+      if (trap.poisonSeconds) entity.addEffect("poison", trap.poisonSeconds * 20, { amplifier: 0 });
     }
   }
 }, TRAP_INTERVAL_TICKS);

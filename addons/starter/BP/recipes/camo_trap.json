@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "starter:camo_trap" },
+    "tags": ["crafting_table"],
+    "pattern": ["LLL", "LTL", "LLL"],
+    "key": {
+      "L": { "item": "minecraft:oak_leaves" },
+      "T": { "item": "starter:spike_trap" }
+    },
+    "unlock": [{ "item": "starter:spike_trap" }],
+    "result": { "item": "starter:camo_trap" }
+  }
+}

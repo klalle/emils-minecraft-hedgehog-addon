@@ -7,6 +7,9 @@
     "starter_ruby_block": {
       "textures": "textures/blocks/ruby_block"
     },
+    "starter_poison_trap": {
+      "textures": "textures/blocks/poison_trap"
+    },
     "starter_spike_trap": {
       "textures": "textures/blocks/spike_trap"
     }
