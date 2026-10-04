@@ -17,19 +17,17 @@
       },
       "scripts": {
         "pre_animation": [
-          "variable.on = query.player_level >= 1000000 && query.player_level < 2000000;",
+          "variable.on = query.player_level >= 1000 && query.player_level < 10000;",
           "variable.d0 = math.mod(query.player_level, 10);",
           "variable.d1 = math.mod(math.floor(query.player_level / 10), 10);",
           "variable.d2 = math.mod(math.floor(query.player_level / 100), 10);",
           "variable.d3 = math.mod(math.floor(query.player_level / 1000), 10);",
-          "variable.d4 = math.mod(math.floor(query.player_level / 10000), 10);",
-          "variable.d5 = math.mod(math.floor(query.player_level / 100000), 10);",
           "variable.tune_rz = variable.on ? (variable.d0 - 5) * 15 : 0;",
           "variable.tune_ry = variable.on ? (variable.d1 - 5) * 15 : 0;",
           "variable.tune_rx = variable.on ? (variable.d2 - 5) * 15 : 0;",
-          "variable.tune_pz = variable.on ? (variable.d3 - 5) * 2 : 0;",
-          "variable.tune_py = variable.on ? (variable.d4 - 5) * 2 : 0;",
-          "variable.tune_px = variable.on ? (variable.d5 - 5) * 2 : 0;"
+          "variable.tune_py = variable.on ? (variable.d3 - 5) * 2 : 0;",
+          "variable.tune_px = 0;",
+          "variable.tune_pz = 0;"
         ],
         "animate": ["wield"]
       },
