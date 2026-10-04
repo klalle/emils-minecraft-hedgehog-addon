@@ -5,8 +5,11 @@
       "loop": true,
       "bones": {
         "pole": {
-          "position": ["-7.0 + variable.tune_px", "-3.0 + variable.tune_py", "-2.0 + variable.tune_pz"],
+          "position": [-7.0, -5.0, -2.0],
           "rotation": [152.0, -9.0, 25.0]
+        },
+        "tilt": {
+          "rotation": [0.0, -45.0, 0.0]
         }
       }
     },
@@ -14,16 +17,11 @@
       "loop": true,
       "bones": {
         "pole": {
-          "position": ["1.5 + variable.tune_px", "-2.5 + variable.tune_py", "-10.5 + variable.tune_pz"],
+          "position": [1.5, -4.5, -10.5],
           "rotation": [97.0, -1.5, -49.0]
-        }
-      }
-    },
-    "animation.starter.slingshot.tune": {
-      "loop": true,
-      "bones": {
+        },
         "tilt": {
-          "rotation": ["variable.tune_rx", "variable.tune_ry", "variable.tune_rz"]
+          "rotation": [-45.0, 60.0, 0.0]
         }
       }
     }
