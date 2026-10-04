@@ -32,14 +32,22 @@ Namn på svenska/engelska står i `RP/texts/*.lang`.
 
 ## Innehåll i starter-addonet
 
-| Sak | ID | Hur du får den |
-|---|---|---|
-| Rubinblock | `starter:ruby_block` | `/give @s starter:ruby_block` |
-| Igelkott (neutralt djur, slår tillbaka) | `starter:hedgehog` | `/summon starter:hedgehog` eller spawn egg i kreativmenyn |
-| Igelkottstagg (droppas av igelkott) | `starter:hedgehog_spine` | `/give @s starter:hedgehog_spine` |
-| Taggsköld | `starter:thorn_shield` | craft: tagg/planks/järn, eller `/give` |
+Alla namn i spelet är på engelska. Handboken (`Hedgehog Handbook`, craftas av en bok + en Hedgehog Spine) förklarar hur varje sak craftas och vad den gör; texten finns i `addons/starter/BP/scripts/guide.js`.
 
-Taggskölden ska hållas i vänsterhanden. Den skadar den som slår dig (3 hjärtan-halvor, 6 om du sneakar och då får du även tillbaka lite liv). Logiken finns i `addons/starter/BP/scripts/main.js`.
+| Name | ID |
+|---|---|
+| Ruby Block | `starter:ruby_block` |
+| Hedgehog | `starter:hedgehog` |
+| Hedgehog Spine | `starter:hedgehog_spine` |
+| Hedgehog Ball | `starter:hedgehog_ball` |
+| Slingshot | `starter:slingshot` |
+| Thorn Shield | `starter:thorn_shield` |
+| Spike Trap | `starter:spike_trap` |
+| Poison Spike Trap | `starter:poison_trap` |
+| Camouflaged Spike Trap | `starter:camo_trap` |
+| Hedgehog Handbook | `starter:guide_book` |
+
+Logiken (sköld, slangbälla, fällor) finns i `addons/starter/BP/scripts/main.js`.
 
 ## Lokal testserver
 

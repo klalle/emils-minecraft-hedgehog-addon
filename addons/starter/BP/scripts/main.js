@@ -1,4 +1,5 @@
 import { world, system, EntityDamageCause, EquipmentSlot } from "@minecraft/server";
+import "./guide.js";
 
 // Fällor: alla levande varelser som står på blocket tar skada (utom igelkottar).
 const TRAPS = {
@@ -54,7 +55,7 @@ world.afterEvents.itemUse.subscribe((ev) => {
 
   const creative = player.getGameMode() === "Creative";
   if (!creative && !takeAmmo(player)) {
-    player.onScreenDisplay.setActionBar("§cInga igelkottsbollar!");
+    player.onScreenDisplay.setActionBar("§cNo hedgehog balls!");
     return;
   }
 

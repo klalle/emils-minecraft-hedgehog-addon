@@ -106,7 +106,17 @@ $b = New-Object System.Drawing.Bitmap 64, 32
 Fill $b 0 0 24 24 125 88 50 10
 Fill $b 26 0 46 3 170 40 40 10
 Save $b "$rp\attachables\slingshot.png"
+# Handbok, ikon 16x16: grön bok med igelkottstagg
+$b = New-Object System.Drawing.Bitmap 16, 16
+for ($x = 3; $x -le 12; $x++) { for ($y = 1; $y -le 14; $y++) {
+  $edge = ($x -eq 3 -or $x -eq 12 -or $y -eq 1 -or $y -eq 14)
+  $d = $rnd.Next(-6, 6)
+  $b.SetPixel($x, $y, $(if ($edge) { C 40 90 45 } else { C (60 + $d) (130 + $d) (65 + $d) })) } }
+for ($y = 2; $y -le 13; $y++) { $b.SetPixel(4, $y, (C 235 225 190)) }
+foreach ($i in 0..4) { $b.SetPixel(6 + $i, 10 - $i, (C 225 205 160)); $b.SetPixel(6 + $i, 11 - $i, (C 130 95 55)) }
+Save $b "$rp\items\guide_book.png"
 Write-Host 'Texturer genererade.'
+
 
 
 
