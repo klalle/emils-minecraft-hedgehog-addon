@@ -32,7 +32,7 @@ Namn på svenska/engelska står i `RP/texts/*.lang`.
 
 ## Innehåll i starter-addonet
 
-Alla namn i spelet är på engelska. Handboken (`Hedgehog Handbook`, craftas av en bok + en Hedgehog Spine) förklarar hur varje sak craftas och vad den gör; texten finns i `addons/starter/BP/scripts/guide.js`.
+Namn och handbok visas på spelarens eget språk (engelska eller svenska). Handboken (`Hedgehog Handbook` / `Igelkottens handbok`, craftas av en bok + en Hedgehog Spine) förklarar hur varje sak craftas och vad den gör. Alla texter finns i `addons/starter/RP/texts/en_US.lang` och `sv_SE.lang`; sidorna listas i `addons/starter/BP/scripts/guide.js`. Nya språk: lägg till en `<språk>.lang` och namnet i `languages.json`.
 
 | Name | ID |
 |---|---|

@@ -55,7 +55,7 @@ world.afterEvents.itemUse.subscribe((ev) => {
 
   const creative = player.getGameMode() === "Creative";
   if (!creative && !takeAmmo(player)) {
-    player.onScreenDisplay.setActionBar("§cNo hedgehog balls!");
+    player.onScreenDisplay.setActionBar({ translate: "starter.no_ammo" });
     return;
   }
 
