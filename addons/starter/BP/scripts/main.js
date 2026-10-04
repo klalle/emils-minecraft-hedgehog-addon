@@ -1,5 +1,15 @@
-import { world, system, EntityDamageCause, EquipmentSlot } from "@minecraft/server";
-import "./guide.js";
+import { world, system, EntityDamageCause, EquipmentSlot, ItemStack } from "@minecraft/server";
+import { GUIDE_BOOK } from "./guide.js";
+
+// Varje spelare får handboken första gången de går in i en värld (taggen följer med världen).
+const HANDBOOK_TAG = "starter_got_handbook";
+
+world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
+  if (!initialSpawn || player.hasTag(HANDBOOK_TAG)) return;
+  player.addTag(HANDBOOK_TAG);
+  const leftover = player.getComponent("minecraft:inventory").container.addItem(new ItemStack(GUIDE_BOOK, 1));
+  if (leftover) player.dimension.spawnItem(leftover, player.location);
+});
 
 // Fällor: alla levande varelser som står på blocket tar skada (utom igelkottar).
 const TRAPS = {

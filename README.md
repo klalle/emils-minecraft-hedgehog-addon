@@ -20,7 +20,8 @@ Fel i packen syns i Minecraft: Inställningar > Skapare > *Aktivera innehållslo
 
 ## Dela
 
-- Kompisar: skicka `dist\starter.mcaddon` – dubbelklick importerar den i Minecraft.
+- Kompisar: skicka `dist\starter.mcaddon` – dubbelklick (Windows) eller "Öppna med Minecraft" (Android/iOS) importerar den.
+- Android-platta: för över `starter.mcaddon` (Google Drive, mejl, USB), öppna den med Minecraft, skapa en ny värld och aktivera både Behavior Pack och Resource Pack. Handboken delas ut automatiskt första gången man går in i en värld.
 - Servern: se `docker/` (kommer).
 
 ## För nybörjare
