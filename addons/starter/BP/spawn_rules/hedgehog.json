@@ -10,9 +10,9 @@
         "minecraft:spawns_on_surface": {},
         "minecraft:difficulty_filter": { "min": "peaceful", "max": "hard" },
         "minecraft:brightness_filter": { "min": 7, "max": 15, "adjust_for_weather": false },
-        "minecraft:weight": { "default": 10 },
-        "minecraft:herd": { "min_size": 2, "max_size": 4 },
-        "minecraft:density_limit": { "surface": 6 },
+        "minecraft:weight": { "default": 50 },
+        "minecraft:herd": { "min_size": 3, "max_size": 5 },
+        "minecraft:density_limit": { "surface": 12 },
         "minecraft:biome_filter": {
           "any_of": [
             { "test": "has_biome_tag", "value": "forest" },
