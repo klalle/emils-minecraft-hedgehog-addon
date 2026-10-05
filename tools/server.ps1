@@ -2,8 +2,12 @@
 #   .\tools\server.ps1 setup            skriver labb-inställningar i server.properties (en gång)
 #   .\tools\server.ps1 deploy [addon]   kopierar packs till servern och aktiverar dem i världen
 #   .\tools\server.ps1 start            startar servern (Ctrl+C eller skriv "stop" för att stoppa)
+#   .\tools\server.ps1 bg               startar servern dold i bakgrunden (logg i server\server.log)
+#                                       och hindrar att datorn somnar medan den kör
+#   .\tools\server.ps1 stop             stoppar bakgrundsservern
+#   .\tools\server.ps1 restart          stop + deploy + bg
 param(
-  [Parameter(Mandatory)][ValidateSet('setup', 'deploy', 'start')][string]$Command,
+  [Parameter(Mandatory)][ValidateSet('setup', 'deploy', 'start', 'bg', 'stop', 'restart')][string]$Command,
   [string]$Addon
 )
 
@@ -66,6 +70,24 @@ switch ($Command) {
   'start' {
     Push-Location $srv
     try { & .\bedrock_server.exe } finally { Pop-Location }
+  }
+  'bg' {
+    if (Get-Process bedrock_server -ErrorAction SilentlyContinue) { throw 'Servern kör redan. Använd: .\tools\server.ps1 restart' }
+    $p = Start-Process "$srv\bedrock_server.exe" -WorkingDirectory $srv -PassThru -WindowStyle Hidden `
+      -RedirectStandardOutput "$srv\server.log" -RedirectStandardError "$srv\server.err"
+    # Datorn får inte somna medan servern kör (sömn ger en falsk "hang" i Minecrafts watchdog som stänger servern).
+    Start-Process powershell -WindowStyle Hidden -ArgumentList '-NoProfile', '-File', "$PSScriptRoot\keep-awake.ps1", '-ProcessId', $p.Id
+    Write-Host "Servern startad (PID $($p.Id)). Logg: server\server.log"
+  }
+  'stop' {
+    Get-Process bedrock_server -ErrorAction SilentlyContinue | Stop-Process -Force
+    Write-Host 'Servern stoppad.'
+  }
+  'restart' {
+    & $PSCommandPath stop
+    Start-Sleep 2
+    & $PSCommandPath deploy
+    & $PSCommandPath bg
   }
 }
 

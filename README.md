@@ -55,5 +55,7 @@ Logiken (sköld, slangbälla, fällor) finns i `addons/starter/BP/scripts/main.j
 ```powershell
 .\tools\server.ps1 setup    # en gång
 .\tools\server.ps1 deploy   # efter varje ändring
-.\tools\server.ps1 start    # starta (anslut på 127.0.0.1:19132)
+.\tools\server.ps1 start    # starta i förgrunden (anslut på 127.0.0.1:19132)
+.\tools\server.ps1 restart  # stoppa + deploy + starta dold i bakgrunden (datorn somnar inte medan servern kör)
+.\tools\server.ps1 stop     # stoppa bakgrundsservern
 ```
