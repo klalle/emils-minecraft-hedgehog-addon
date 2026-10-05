@@ -8,6 +8,7 @@
     "conditions": [
       {
         "minecraft:spawns_on_surface": {},
+        "minecraft:difficulty_filter": { "min": "peaceful", "max": "hard" },
         "minecraft:brightness_filter": { "min": 7, "max": 15, "adjust_for_weather": false },
         "minecraft:weight": { "default": 10 },
         "minecraft:herd": { "min_size": 1, "max_size": 3 },

@@ -17,5 +17,20 @@ function setDaytime() {
   }
 }
 
-world.afterEvents.worldLoad.subscribe(setDaytime);
+world.afterEvents.worldLoad.subscribe(() => {
+  setDaytime();
+  try {
+    world.gameRules.doMobSpawning = true;
+    console.warn(`dev-tools: doMobSpawning=${world.gameRules.doMobSpawning}`);
+  } catch (e) {
+    console.warn(`dev-tools: kunde inte läsa/sätta doMobSpawning: ${e}`);
+  }
+});
 system.runInterval(setDaytime, 20 * 60);
+
+// Felsökning: logga varje gång en igelkott uppstår (orsak + plats), så vi ser om naturlig spawn fungerar.
+world.afterEvents.entitySpawn.subscribe((ev) => {
+  if (ev.entity.typeId !== "starter:hedgehog") return;
+  const { x, y, z } = ev.entity.location;
+  console.warn(`dev-tools: hedgehog spawned cause=${ev.cause} at ${Math.floor(x)},${Math.floor(y)},${Math.floor(z)}`);
+});
