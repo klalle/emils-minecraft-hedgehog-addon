@@ -7,6 +7,12 @@ Minecraft Bedrock addon with a hedgehog, a thorn shield, a slingshot and spike t
 - Create a new world, and enable both **Starter BP** (behavior pack) and **Starter RP** (resource pack).
 - Requires Minecraft Bedrock 1.26 or newer.
 
+### Android tip
+On some Android devices (for example Samsung tablets), tapping the downloaded file does not offer Minecraft, only Google apps. If that happens:
+1. Install [Cx File Explorer](https://play.google.com/store/apps/details?id=com.cxinventor.file.explorer) from Google Play.
+2. Open the Downloads folder in Cx File Explorer and tap `starter.mcaddon`.
+3. Choose **Minecraft** when asked which app to open it with.
+
 ## What is in it
 | Name | What it does |
 |---|---|
