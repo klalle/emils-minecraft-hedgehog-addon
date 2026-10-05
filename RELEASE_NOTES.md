@@ -4,7 +4,10 @@ Changes since v1.26.0:
 - Hedgehogs now spawn much more often (bigger flocks, higher weight) in forest, taiga, savanna and plains.
 - The pack names now include the version number ("Starter BP 1.28.1" / "Starter RP 1.28.1"), so you can tell old and new versions apart in Minecraft.
 
-To update: import this file, then in Settings > Storage delete the older "Starter" packs. In an existing world, remove the old packs from the world and add the new ones again (or just create a new world).
+## Updating from an older version
+1. Import this file (see above).
+2. Delete the old packs: go to **Settings > Storage**, open **Resource Packs** (and then **Behavior Packs**), press **Manage** (Swedish: *Hantera*) and delete the older "Starter" packs, the ones whose names have no version number or a lower one.
+3. In an existing world, remove the old packs from the world's pack list and add the new ones again. Or just create a new world, which is the easiest way.
 
 Minecraft Bedrock addon with a hedgehog, a thorn shield, a slingshot and spike traps.
 
