@@ -11,7 +11,7 @@
         "minecraft:difficulty_filter": { "min": "peaceful", "max": "hard" },
         "minecraft:brightness_filter": { "min": 7, "max": 15, "adjust_for_weather": false },
         "minecraft:weight": { "default": 10 },
-        "minecraft:herd": { "min_size": 1, "max_size": 3 },
+        "minecraft:herd": { "min_size": 2, "max_size": 4 },
         "minecraft:density_limit": { "surface": 6 },
         "minecraft:biome_filter": {
           "any_of": [
