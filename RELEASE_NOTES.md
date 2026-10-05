@@ -1,6 +1,10 @@
-# Starter addon v1.28.0
+# Starter addon v1.28.1
 
-Changes since v1.26.0: hedgehogs now spawn much more often (bigger flocks, higher weight) in forest, taiga, savanna and plains. Delete the old pack and import this file again to update.
+Changes since v1.26.0:
+- Hedgehogs now spawn much more often (bigger flocks, higher weight) in forest, taiga, savanna and plains.
+- The pack names now include the version number ("Starter BP 1.28.1" / "Starter RP 1.28.1"), so you can tell old and new versions apart in Minecraft.
+
+To update: import this file, then in Settings > Storage delete the older "Starter" packs. In an existing world, remove the old packs from the world and add the new ones again (or just create a new world).
 
 Minecraft Bedrock addon with a hedgehog, a thorn shield, a slingshot and spike traps.
 
